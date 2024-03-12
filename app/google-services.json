@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "664610984771",
+    "project_id": "chatapp-cacbc",
+    "storage_bucket": "chatapp-cacbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664610984771:android:0d4575b74de242466055f6",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAc_6E2Vi4jSnPQ81N1VveVkc_Nuif2mQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
