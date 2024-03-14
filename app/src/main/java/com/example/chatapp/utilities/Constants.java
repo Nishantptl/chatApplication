@@ -16,4 +16,7 @@ public class Constants {
     public static final String KEY_RECEIVER_ID = "receiverId";
     public static final String KEY_MESSAGE = "message";
     public static final String KEY_TIMESTAMP = "timestamp";
+    public static final String KEY_COLLECTION_GROUP = "groups";
+    public static final String KEY_GROUP_NAME = "groupName";
+    public static final String KEY_GROUP_ID = "groupId";
 }

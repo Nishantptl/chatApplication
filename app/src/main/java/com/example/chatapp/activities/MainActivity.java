@@ -3,6 +3,7 @@ package com.example.chatapp.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private pManager manager;
     TextView username;
     ImageView img_signOut, img_add;
+    Button btn_groupName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.userName);
         img_signOut = findViewById(R.id.img_signOut);
         img_add = findViewById(R.id.img_add);
+        btn_groupName = findViewById(R.id.btn_group);
+
+        btn_groupName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), groupName.class));
+            }
+        });
 
         manager = new pManager(getApplicationContext());
         loadUserDetails();
