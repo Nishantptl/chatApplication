@@ -63,33 +63,6 @@ public class GroupMemberAdapter extends RecyclerView.Adapter<GroupMemberAdapter.
         });
     }
 
-//    private void addMember(String memberName, String memberId) {
-//        pManager manager = new pManager(context);
-//        Member memberModel = new Member();
-//        memberModel.setMemberName(memberName);
-//        memberModel.setMemberId(memberId);
-//        FirebaseFirestore database = FirebaseFirestore.getInstance();
-//        HashMap<String, Object> group = new HashMap<>();
-//        group.put(Constants.KEY_GROUP_MEMBER_NAME, memberName);
-//        group.put(Constants.KEY_GROUP_MEMBER_ID, memberId);
-//        group.put(Constants.KEY_GROUP_ID, group);
-//        database.collection(Constants.KEY_GROUP_MEMBER_NAME)
-//                .add(group)
-//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                    @Override
-//                    public void onSuccess(DocumentReference documentReference) {
-//                        manager.putString(Constants.KEY_GROUP_MEMBER_NAME, memberName);
-//                        manager.putString(Constants.KEY_GROUP_MEMBER_ID, memberId);
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(context, "Unable to add", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//    }
-
 
     @Override
     public int getItemCount() {

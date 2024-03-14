@@ -62,9 +62,9 @@ public class GroupChatActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-//                        manager.putString(Constants.KEY_GROUP_MEMBER_NAME, memberName);
-//                        manager.putString(Constants.KEY_GROUP_MEMBER_ID, memberId);
-//                        manager.putString(Constants.KEY_GROUP_ID, "def");
+                        manager.putString(Constants.KEY_GROUP_MEMBER_NAME, memberName);
+                        manager.putString(Constants.KEY_GROUP_MEMBER_ID, memberId);
+                        manager.putString(Constants.KEY_GROUP_ID, groupName);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
