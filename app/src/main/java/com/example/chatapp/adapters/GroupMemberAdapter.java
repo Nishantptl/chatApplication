@@ -55,9 +55,9 @@ public class GroupMemberAdapter extends RecyclerView.Adapter<GroupMemberAdapter.
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 GroupChatActivity obj = new GroupChatActivity();
                 if(isChecked){
-                    obj.addMember(userList.get(position).name, userList.get(position).id);
+                    obj.addMember(context, userList.get(position).name, userList.get(position).id);
                 }else{
-                    obj.addMember(userList.get(position).name, userList.get(position).id);
+//                    obj.addMember(userList.get(position).name, userList.get(position).id);
                 }
             }
         });

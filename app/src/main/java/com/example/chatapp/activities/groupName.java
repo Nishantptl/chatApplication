@@ -38,7 +38,6 @@ public class groupName extends AppCompatActivity {
     EditText add_groupName;
     Button btnSave;
     pManager manager;
-    RecyclerView recyclerView;
     ImageView i_back;
     String groupName;
 

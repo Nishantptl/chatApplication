@@ -1,15 +1,12 @@
 package com.example.chatapp.activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +14,8 @@ import com.example.chatapp.R;
 import com.example.chatapp.adapters.GroupMemberAdapter;
 import com.example.chatapp.models.Member;
 import com.example.chatapp.models.User;
-import com.example.chatapp.utilities.*;
+import com.example.chatapp.utilities.Constants;
+import com.example.chatapp.utilities.pManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -37,6 +35,7 @@ public class GroupChatActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     String groupName;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,23 +47,26 @@ public class GroupChatActivity extends AppCompatActivity {
 
     }
 
-    public void addMember(String memberName, String memberId) {
+    public void addMember(Context context, String memberName, String memberId) {
 
-        Toast.makeText(getApplicationContext(), "Name : "+memberName + ", memberId : "+memberId, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Name : "+memberName + ", memberId : "+memberId, Toast.LENGTH_SHORT).show();
 
+        pManager pManager = new pManager(context);
+        String mName = memberName;
+        String mId = memberId;
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         HashMap<String, Object> group = new HashMap<>();
-        group.put(Constants.KEY_GROUP_MEMBER_NAME, memberName);
-        group.put(Constants.KEY_GROUP_MEMBER_ID, memberId);
+        group.put(Constants.KEY_GROUP_MEMBER_NAME, mName);
+        group.put(Constants.KEY_GROUP_MEMBER_ID, mId);
         group.put(Constants.KEY_GROUP_ID, groupName);
         database.collection(Constants.KEY_COLLECTION_GROUP)
                 .add(group)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        manager.putString(Constants.KEY_GROUP_MEMBER_NAME, memberName);
-                        manager.putString(Constants.KEY_GROUP_MEMBER_ID, memberId);
-                        manager.putString(Constants.KEY_GROUP_ID, groupName);
+                        pManager.putString(Constants.KEY_GROUP_MEMBER_NAME, mName);
+                        pManager.putString(Constants.KEY_GROUP_MEMBER_ID, mId);
+                        pManager.putString(Constants.KEY_GROUP_ID, groupName);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

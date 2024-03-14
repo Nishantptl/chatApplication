@@ -18,6 +18,6 @@ public class Constants {
     public static final String KEY_TIMESTAMP = "timestamp";
     public static final String KEY_COLLECTION_GROUP = "groups";
     public static final String KEY_GROUP_ID = "groupId";
-    public static final String KEY_GROUP_MEMBER_NAME = "groupMemberName";
+    public static String KEY_GROUP_MEMBER_NAME = "groupMemberName";
     public static final String KEY_GROUP_MEMBER_ID = "groupMemberId";
 }
